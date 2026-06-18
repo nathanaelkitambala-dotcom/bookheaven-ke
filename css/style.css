@@ -84,3 +84,16 @@ section h2::after {
     margin-bottom: 30px;
   }
 }
+
+/* ===== ABOUT PAGE ===== */
+.page-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+}
+
+.story-icon {
+  font-size: 8rem;
+  color: #1a1a2e;
+}
