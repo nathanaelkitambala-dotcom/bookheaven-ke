@@ -97,8 +97,15 @@ section h2::after {
   font-size: 8rem;
   color: #1a1a2e;
 }
+
 /* ===== TEAM SECTION ===== */
 .team-avatar {
   width: 80px;
   height: 80px;
+}
+
+/* ===== PRODUCT DETAIL PAGE ===== */
+.product-icon {
+  font-size: 10rem;
+  color: #1a1a2e;
 }
