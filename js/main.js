@@ -26,3 +26,48 @@ function filterProducts(category) {
     }
   });
 }
+
+// ===== CONTACT FORM VALIDATION =====
+function validateForm() {
+  
+  const name = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('emailAddress').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  
+  document.getElementById('nameError').classList.add('d-none');
+  document.getElementById('emailError').classList.add('d-none');
+  document.getElementById('subjectError').classList.add('d-none');
+  document.getElementById('messageError').classList.add('d-none');
+
+  
+  let isValid = true;
+
+  
+  if (name === '') {
+    document.getElementById('nameError').classList.remove('d-none');
+    isValid = false;
+  }
+
+  if (email === '' || !email.includes('@')) {
+    document.getElementById('emailError').classList.remove('d-none');
+    isValid = false;
+  }
+
+  if (subject === '') {
+    document.getElementById('subjectError').classList.remove('d-none');
+    isValid = false;
+  }
+
+  if (message === '') {
+    document.getElementById('messageError').classList.remove('d-none');
+    isValid = false;
+  }
+
+  
+  if (isValid) {
+    document.getElementById('contactForm').classList.add('d-none');
+    document.getElementById('successMessage').classList.remove('d-none');
+  }
+}
