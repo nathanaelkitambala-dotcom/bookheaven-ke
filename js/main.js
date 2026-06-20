@@ -71,3 +71,35 @@ function validateForm() {
     document.getElementById('successMessage').classList.remove('d-none');
   }
 }
+
+// ===== DARK MODE TOGGLE =====
+function toggleDarkMode() {
+  const body = document.body;
+  const icon = document.getElementById('darkModeIcon');
+
+  // Toggle dark mode class on body
+  body.classList.toggle('dark-mode');
+
+  // Switch icon between moon and sun
+  if (body.classList.contains('dark-mode')) {
+    icon.classList.remove('bi-moon-fill');
+    icon.classList.add('bi-sun-fill');
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    icon.classList.remove('bi-sun-fill');
+    icon.classList.add('bi-moon-fill');
+    localStorage.setItem('darkMode', 'disabled');
+  }
+}
+
+// Apply dark mode on page load if previously enabled
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    const icon = document.getElementById('darkModeIcon');
+    if (icon) {
+      icon.classList.remove('bi-moon-fill');
+      icon.classList.add('bi-sun-fill');
+    }
+  }
+});
